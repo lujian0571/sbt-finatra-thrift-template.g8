@@ -30,9 +30,9 @@ lazy val baseSettings = Seq(
 
 lazy val root = (project in file(".")).
   settings(
-    name := "$name;format="word,normalize"$",
+    name := "$name;format="normalize"$",
     organization := "$organization;format="normalize"$",
-    moduleName := "$name;format="word,normalize"$",
+    moduleName := "$name;format="normalize"$",
     run := {
       (run in `server` in Compile).evaluated
     }
@@ -42,8 +42,8 @@ lazy val root = (project in file(".")).
 lazy val server = (project in file("server")).
   settings(baseSettings).
   settings(
-    name := "$name;format="word,normalize"$-server",
-    moduleName := "$name;format="word,normalize"$-server",
+    name := "$name;format="normalize"$-server",
+    moduleName := "$name;format="normalize"$-server",
     mainClass in (Compile, run) := Some("com.example.ExampleServerMain"),
     javaOptions ++= Seq(
       "-Dlog.service.output=/dev/stderr",
@@ -71,8 +71,8 @@ lazy val server = (project in file("server")).
 lazy val idl = (project in file("idl")).
   settings(baseSettings).
   settings(
-    name := "$name;format="word,normalize"$-idl",
-    moduleName := "$name;format="word,normalize"$-idl",
+    name := "$name;format="normalize"$-idl",
+    moduleName := "$name;format="normalize"$-idl",
     scroogeThriftDependencies in Compile := Seq(
       "finatra-thrift_2.11"
     ),

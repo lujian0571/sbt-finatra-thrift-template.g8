@@ -1,4 +1,4 @@
-package $organization;format="word,normalize"$.$name;format="word,normalize"$
+package $organization;format="normalize"$.$name;format="normalize"$
 
 import com.twitter.finatra.thrift.ThriftServer
 import com.twitter.finatra.thrift.routing.ThriftRouter

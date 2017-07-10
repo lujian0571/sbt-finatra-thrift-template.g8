@@ -1,4 +1,4 @@
-package $organization;format="word,normalize"$.$name;format="word,normalize"$.controllers
+package $organization;format="normalize"$.$name;format="normalize"$.controllers
 
 import com.example.ping.thriftscala.PingService
 import com.example.ping.thriftscala.PingService.Ping

@@ -1,4 +1,4 @@
-package $organization;format="word,normalize"$.$name;format="word,normalize"$
+package $organization;format="normalize"$.$name;format="normalize"$
 
 import com.google.inject.Stage
 import com.twitter.finatra.thrift.EmbeddedThriftServer

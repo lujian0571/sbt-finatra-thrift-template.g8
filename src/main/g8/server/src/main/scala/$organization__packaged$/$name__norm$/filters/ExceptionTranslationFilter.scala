@@ -1,4 +1,4 @@
-package $organization;format="word,normalize"$.$name;format="word,normalize"$.filters
+package $organization;format="normalize"$.$name;format="normalize"$.filters
 
 import com.twitter.finagle.{Service, TimeoutException}
 import com.twitter.finatra.thrift.thriftscala.ClientErrorCause.RequestTimeout

@@ -1,5 +1,5 @@
-namespace java $organization;format="word,normalize"$.$name;format="word,normalize"$.thriftjava
-#@namespace scala $organization;format="word,normalize"$.$name;format="word,normalize"$.thriftscala
+namespace java $organization;format="normalize"$.$name;format="normalize"$.thriftjava
+#@namespace scala $organization;format="normalize"$.$name;format="normalize"$.thriftscala
 namespace rb Ping
 
 include "finatra-thrift/finatra_thrift_exceptions.thrift"

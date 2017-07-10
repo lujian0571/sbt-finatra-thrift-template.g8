@@ -7,7 +7,7 @@
   </appender>
 
   <!-- Per Package Config -->
-  <logger name="$organization;format="word,normalize"$.$name;format="word,normalize"$" level="debug"/>
+  <logger name="$organization;format="normalize"$.$name;format="normalize"$" level="debug"/>
 
   <!-- Root Logger -->
   <root level="info">

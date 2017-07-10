@@ -77,7 +77,7 @@
   <logger name="com.twitter.logging.ScribeHandler" level="warn"/>
   <logger name="com.twitter.zookeeper.client.internal" level="warn"/>
   <logger name="com.twitter.finatra" level="debug"/>
-  <logger name="$organization;format="word,normalize"$.$name;format="word,normalize"$" level="debug"/>
+  <logger name="$organization;format="normalize"$.$name;format="normalize"$" level="debug"/>
 
   <root level="${log_level:-INFO}">
     <appender-ref ref="ASYNC-SERVICE"/>

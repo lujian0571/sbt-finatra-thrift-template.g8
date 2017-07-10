@@ -5,7 +5,6 @@ parallelExecution in ThisBuild := false
 lazy val versions = new {
   val finatra = "2.11.0"
   val guice = "4.0"
-  val junit = "4.12"
   val logback = "1.2.3"
   val mockito = "2.7.22"
   val scalatest = "3.0.3"
@@ -18,14 +17,23 @@ lazy val baseSettings = Seq(
   scalaVersion := "2.12.2",
   ivyScala := ivyScala.value.map(_.copy(overrideScalaVersion = true)),
   libraryDependencies ++= Seq(
-    "junit" % "junit" % versions.junit % "test",
     "org.mockito" % "mockito-core" % versions.mockito % "test",
     "org.scalacheck" %% "scalacheck" % versions.scalacheck % "test",
     "org.scalatest" %% "scalatest" % versions.scalatest % "test",
     "org.specs2" %% "specs2-mock" % versions.specs2 % "test"
   ),
-  resolvers += Resolver.sonatypeRepo("releases"),
-  fork in run := true
+  resolvers ++= Seq(
+    Resolver.mavenLocal,
+    "Aliyun Maven" at "http://maven.aliyun.com/nexus/content/groups/public/",
+    "Maven Center" at "http://repo1.maven.org/maven2/",
+    Resolver.sonatypeRepo("releases")
+  ),
+  fork in run := true,
+  assemblyMergeStrategy in assembly := {
+    case "BUILD" => MergeStrategy.discard
+    case "META-INF/io.netty.versions.properties" => MergeStrategy.last
+    case other => MergeStrategy.defaultMergeStrategy(other)
+  }
 )
 
 lazy val root = (project in file(".")).

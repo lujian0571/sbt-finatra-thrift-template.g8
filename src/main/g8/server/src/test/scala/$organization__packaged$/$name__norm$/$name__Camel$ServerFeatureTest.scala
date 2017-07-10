@@ -1,6 +1,6 @@
 package $organization;format="normalize"$.$name;format="normalize"$
 
-import $organization;format="normalize"$.$name;format="normalize"$.ping.thriftscala.$name;format="Camel"$Service
+import $organization;format="normalize"$.$name;format="normalize"$.thriftscala.$name;format="Camel"$Service
 import com.twitter.finatra.thrift.EmbeddedThriftServer
 import com.twitter.inject.server.FeatureTest
 import com.twitter.util.Future

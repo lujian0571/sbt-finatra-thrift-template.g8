@@ -1,6 +1,6 @@
 namespace java $organization;format="normalize"$.$name;format="normalize"$.thriftjava
 #@namespace scala $organization;format="normalize"$.$name;format="normalize"$.thriftscala
-namespace rb Ping
+namespace rb $name;format="Camel"$
 
 include "finatra-thrift/finatra_thrift_exceptions.thrift"
 

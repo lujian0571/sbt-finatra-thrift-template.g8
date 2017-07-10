@@ -3,19 +3,19 @@ import sbt.Keys._
 parallelExecution in ThisBuild := false
 
 lazy val versions = new {
-  val finatra = "2.11.0"
+  val finatra = "2.12.2"
   val guice = "4.0"
   val junit = "4.12"
-  val logback = "1.1.7"
-  val mockito = "1.9.5"
-  val scalatest = "3.0.0"
-  val scalacheck = "1.13.4"
-  val specs2 = "2.4.17"
+  val logback = "1.2.3"
+  val mockito = "2.7.22"
+  val scalatest = "3.0.3"
+  val scalacheck = "1.13.5"
+  val specs2 = "3.8.9"
 }
 
 lazy val baseSettings = Seq(
   version := "1.0.0-SNAPSHOT",
-  scalaVersion := "2.11.8",
+  scalaVersion := "2.12.2",
   ivyScala := ivyScala.value.map(_.copy(overrideScalaVersion = true)),
   libraryDependencies ++= Seq(
     "junit" % "junit" % versions.junit % "test",
@@ -44,7 +44,7 @@ lazy val server = (project in file("server")).
   settings(
     name := "$name;format="normalize"$-server",
     moduleName := "$name;format="normalize"$-server",
-    mainClass in (Compile, run) := Some("com.example.ExampleServerMain"),
+    mainClass in (Compile, run) := Some("$organization;format="normalize"$.$name;format="normalize"$.$name;format="Camel"$ServerMain"),
     javaOptions ++= Seq(
       "-Dlog.service.output=/dev/stderr",
       "-Dlog.access.output=/dev/stderr"),
@@ -74,7 +74,7 @@ lazy val idl = (project in file("idl")).
     name := "$name;format="normalize"$-idl",
     moduleName := "$name;format="normalize"$-idl",
     scroogeThriftDependencies in Compile := Seq(
-      "finatra-thrift_2.11"
+      "finatra-thrift_2.12"
     ),
     libraryDependencies ++= Seq(
       "com.twitter" %% "finatra-thrift" % versions.finatra

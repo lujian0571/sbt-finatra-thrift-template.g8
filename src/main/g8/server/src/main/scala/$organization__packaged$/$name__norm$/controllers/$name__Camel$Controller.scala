@@ -1,7 +1,7 @@
 package $organization;format="normalize"$.$name;format="normalize"$.controllers
 
-import com.example.ping.thriftscala.PingService
-import com.example.ping.thriftscala.PingService.Ping
+import $organization;format="normalize"$.$name;format="normalize"$.thriftscala.PingService
+import $organization;format="normalize"$.$name;format="normalize"$.thriftscala.PingService.Ping
 import com.twitter.finatra.thrift.Controller
 import com.twitter.util.Future
 import javax.inject.Singleton

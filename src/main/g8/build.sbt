@@ -12,7 +12,22 @@ lazy val versions = new {
   val specs2 = "3.8.9"
 }
 
+lazy val scalaCompilerOptions = scalacOptions ++= Seq(
+  "-deprecation",
+  "-encoding", "UTF-8",
+  "-feature",
+  "-language:existentials",
+  "-language:higherKinds",
+  "-language:implicitConversions",
+  "-unchecked",
+  "-Ywarn-dead-code",
+  "-Ywarn-numeric-widen",
+  "-Xlint",
+  "-Ywarn-unused-import"
+)
+
 lazy val baseSettings = Seq(
+  organization := "$organization;format="normalize"$",
   version := "1.0.0-SNAPSHOT",
   scalaVersion := "2.12.2",
   ivyScala := ivyScala.value.map(_.copy(overrideScalaVersion = true)),
@@ -28,6 +43,9 @@ lazy val baseSettings = Seq(
     "Maven Center" at "http://repo1.maven.org/maven2/",
     Resolver.sonatypeRepo("releases")
   ),
+  scalaCompilerOptions,
+  javacOptions in(Compile, compile) ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint:unchecked"),
+  javacOptions in doc ++= Seq("-source", "1.8"),
   fork in run := true,
   assemblyMergeStrategy in assembly := {
     case "BUILD" => MergeStrategy.discard

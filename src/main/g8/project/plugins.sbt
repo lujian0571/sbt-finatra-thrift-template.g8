@@ -5,5 +5,5 @@ resolvers ++= Seq(
   "Aliyun Maven" at "http://maven.aliyun.com/nexus/content/groups/public/",
   Resolver.sonatypeRepo("snapshots")
 )
-addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.4")
-addSbtPlugin("com.twitter" % "scrooge-sbt-plugin" % "4.16.0")
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.5")
+addSbtPlugin("com.twitter" % "scrooge-sbt-plugin" % "4.18.0")

@@ -6,7 +6,6 @@ import com.twitter.inject.TwitterModule
 
 object RedisClientModule extends TwitterModule {
 
-
   private val serversFlag = flag("redis.servers", "127.0.0.1:6379", "Default redis host:port")
 
   @Singleton
@@ -17,7 +16,7 @@ object RedisClientModule extends TwitterModule {
       .newRichClient(serversFlag())
   }
 
-  //      val sessionCacheKey = Buf.Utf8.apply(s"${this.cachePrefix}_${domain}_session_${req.sessionId}")
+  //      val sessionCacheKey = Buf.Utf8.apply(s"key")
   //      redisClient.lRange(sessionCacheKey, 0L, -1L).onSuccess(list => {
   //        //list.filter()
   //      })

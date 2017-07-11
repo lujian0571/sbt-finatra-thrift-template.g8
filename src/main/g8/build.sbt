@@ -4,7 +4,7 @@ parallelExecution in ThisBuild := false
 
 lazy val versions = new {
   val finatra = "2.11.0"
-  val finagle = "6.44.0"
+  val finagle = "6.45.0"
   val guice = "4.0"
   val logback = "1.2.3"
   val mockito = "2.7.22"

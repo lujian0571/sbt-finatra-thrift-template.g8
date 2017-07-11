@@ -4,6 +4,7 @@ parallelExecution in ThisBuild := false
 
 lazy val versions = new {
   val finatra = "2.11.0"
+  val finagle = "6.44.0"
   val guice = "4.0"
   val logback = "1.2.3"
   val mockito = "2.7.22"
@@ -77,6 +78,11 @@ lazy val server = (project in file("server")).
     libraryDependencies ++= Seq(
       "com.twitter" %% "finatra-thrift" % versions.finatra,
       "ch.qos.logback" % "logback-classic" % versions.logback,
+
+      "com.twitter" %% "finagle-zipkin" % versions.finagle,
+      "com.twitter" %% "finagle-mysql" % versions.finagle,
+      "com.twitter" %% "finagle-memcached" % versions.finagle excludeAll (ExclusionRule(organization = "org.slf4j")),
+      "com.twitter" %% "finagle-redis" % versions.finagle,
 
       "com.twitter" %% "finatra-thrift" % versions.finatra % "test",
       "com.twitter" %% "inject-app" % versions.finatra % "test",

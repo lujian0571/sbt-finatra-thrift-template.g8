@@ -7,7 +7,17 @@
 
 
 ## Dir 
-```
+
+```bash
+$ sbt new lujian0571/sbt-finatra-thrift-template.g8
+Creates a giter8 project template. 
+
+name [myproject]: ping
+organization [com.example]: com.example
+
+Template applied in ./ping
+
+$ tree ping
 ping
 ├── README.md
 ├── build.sbt

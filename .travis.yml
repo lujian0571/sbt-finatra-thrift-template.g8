@@ -1,6 +1,5 @@
 language: scala
 
-# These directories are cached to S3 at the end of the build
 cache:
   directories:
     - $HOME/.ivy2/cache
@@ -11,7 +10,8 @@ jdk:
 
 script:
   ## This runs the template with the default parameters, and runs test within the templated app.
-  - sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test
+  - rm -rf src/main/g8/test # https://github.com/sbt/sbt/issues/630
+  - sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test g8Test
 
   # Tricks to avoid unnecessary cache updates
   - find $HOME/.sbt -name "*.lock" | xargs rm

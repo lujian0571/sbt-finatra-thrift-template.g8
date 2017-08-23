@@ -6,4 +6,4 @@ resolvers ++= Seq(
   Resolver.sonatypeRepo("snapshots")
 )
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.5")
-addSbtPlugin("com.twitter" % "scrooge-sbt-plugin" % "4.18.0")
+addSbtPlugin("com.twitter" % "scrooge-sbt-plugin" % "4.19.0")

@@ -3,8 +3,8 @@ import sbt.Keys._
 parallelExecution in ThisBuild := false
 
 lazy val versions = new {
-  val finatra = "2.11.0"
-  val finagle = "6.45.0"
+  val finatra = "2.12.0"
+  val finagle = "7.0.0"
   val guice = "4.0"
   val logback = "1.2.3"
   val mockito = "1.10.19"
@@ -30,7 +30,7 @@ lazy val scalaCompilerOptions = scalacOptions ++= Seq(
 lazy val baseSettings = Seq(
   organization := "$organization;format="normalize"$",
   version := "1.0.0-SNAPSHOT",
-  scalaVersion := "2.12.2",
+  scalaVersion := "2.12.3",
   ivyScala := ivyScala.value.map(_.copy(overrideScalaVersion = true)),
   libraryDependencies ++= Seq(
     "org.mockito" % "mockito-core" % versions.mockito % "test",

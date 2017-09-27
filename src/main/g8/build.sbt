@@ -3,9 +3,9 @@ import sbt.Keys._
 parallelExecution in ThisBuild := false
 
 lazy val versions = new {
-  val finatra = "2.12.0"
-  val finagle = "7.0.0"
-  val guice = "4.0"
+  val finatra = "2.13.0"
+  val finagle = "7.1.0"
+  val guice = "4.1.0"
   val logback = "1.2.3"
   val mockito = "1.10.19"
   val scalatest = "3.0.3"
